@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css";
+
+import Pesan from "./component/Pesan";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Pesan className="pertama" ucapan="halo" name="dandi" style={{ backgroundColor: "blue" }} size="small" />
+      <Pesan className="pertama" ucapan="halo" name="satrio" style={{ backgroundColor: "red" }} size="large" />
+      <Pesan className="pertama" ucapan="halo" name="Tifa" style={{ backgroundColor: "pink" }} size="medium" />
+    </>
   );
 }
 
