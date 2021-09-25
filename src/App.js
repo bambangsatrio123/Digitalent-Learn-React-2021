@@ -1,15 +1,17 @@
-// import "./App.css";
-import React from "react";
-import Container from "./component/Container";
+import * as React from "react";
+import Counter from "./component/counter";
+import CountDisplay from "./component/counterDisplay";
+import CountProvider from "./context/countContext";
 
-class App extends React.Component {
-  render() {
-    return (
-      <>
-        <Container />
-      </>
-    );
-  }
+function App() {
+  return (
+    <>
+      <CountProvider>
+        <CountDisplay />
+        <Counter />
+      </CountProvider>
+    </>
+  );
 }
 
 export default App;
