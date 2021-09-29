@@ -10,7 +10,7 @@ export default function LoginPage() {
   const history = useHistory();
 
   const onFinish = (values) => {
-    setUser({name: values.username, isLogged: true });
+    setUser({name: values.username , email: values.email});
     history.replace('/');
   };
 

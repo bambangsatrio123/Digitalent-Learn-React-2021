@@ -15,10 +15,10 @@ export default function Router() {
           <Route path="/about">
             <AboutPage />
           </Route>
-          <PrivateRoute allowed={user.isLogged} path="/user" redirect="/login">
+          <PrivateRoute allowed={user.name !=='guest'} path="/user" redirect="/login">
             <UserPage />
           </PrivateRoute>
-          <PrivateRoute allowed={user.isLogged} path="/user/:id">
+          <PrivateRoute allowed={user.name !=='guest'} path="/user/:id">
             <UserPage />
           </PrivateRoute>
           <Route path="/login">

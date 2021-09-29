@@ -21,12 +21,18 @@ export default function Navbar() {
       <Menu.Item key="/user" icon={<UserOutlined />}>
         <Link to="/user">Halaman User</Link>
       </Menu.Item>
-      {!user.isLogged ? (
+      {user.name === "guest" ? (
         <Menu.Item key="/login" icon={<LoginOutlined />}>
           <Link to="/login">Login</Link>
         </Menu.Item>
       ) : (
-        <Menu.Item key="/login" icon={<LogoutOutlined />} onClick={logout}>
+        <Menu.Item 
+        key="/login" 
+        icon={<LogoutOutlined />} 
+        onClick={() => {
+          logout();
+          history.replace("/")
+        }}>
           Logout
         </Menu.Item>
       )}

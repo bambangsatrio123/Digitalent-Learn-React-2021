@@ -1,14 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router";
+import { useSetLocalStorage } from "../hooks/useLocalStorage";
 
 export const UserContext = React.createContext();
 
 export default function UserProvider(props) {
-  const history = useHistory();
-  const [userInfo, setUserInfo] = React.useState({ name: "guest", isLogged: false });
+  // const [userInfo, setUserInfo] = React.useState("guest");
+  const [userInfo, setUserInfo, deleteLocalStorage] = useSetLocalStorage("name", {name: "guest"})
  
   const logout = () => {
-   setUserInfo({ name: "guest", isLogged: false });
+    deleteLocalStorage();
+    window.location.reload();
+  //  setUserInfo({ name: "guest" });
  }
   const value = [userInfo, setUserInfo, logout];
   return <UserContext.Provider value={value} {...props} />;
